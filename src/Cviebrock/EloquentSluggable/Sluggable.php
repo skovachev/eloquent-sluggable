@@ -145,7 +145,7 @@ class Sluggable {
 			// equal to or an incremented version of the new slug -- then the slug doesn't
 			// need to change and we can just return (unless on_update is true, in which case
 			// ignore this test and continue).
-			if ( !$on_update && array_key_exists($model->getKey(), $list) )
+			if ( !$on_update && !$force && array_key_exists($model->getKey(), $list) )
 			{
 				return true;
 			}
